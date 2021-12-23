@@ -1,14 +1,14 @@
 const inquirer = require('inquirer');
 require('console.table');
 const mysql = require('mysql2');
-const db = mysql.createConnection('mysql://root:rootroot@localhost:3306/employeetracker_db')
+const db = mysql.createConnection('mysql://root:rootroot@localhost:3306/employeeTracker_db')
 
 
 function promptOptions() {
     inquirer.prompt([
         {
             type: "list",
-            choices: ["viewEmployee", "viewRole", "addEmployee", "viewDeparment", "addDepartment", "addRole", "updateRole", "removeEmployee", "removeDepartment", "removeRole", "Exit App"],
+            choices: ["viewEmployee", "viewRole", "addEmployee", "viewDepartment", "addDepartment", "addRole", "updateRole", "removeEmployee", "removeDepartment", "removeRole", "Exit App"],
             messages: "What would you like to do?",
             name: "name",
         }
@@ -60,6 +60,7 @@ function viewEmployee() {
 
 
 function viewDepartment() {
+    console.log('list of deparments')
     db.query("SELECT * FROM DEPARTMENT", function (err, data) {
         if (err) throw err;
         console.table(data);
