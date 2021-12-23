@@ -147,7 +147,8 @@ function addDepartment() {
       {
         type: 'number',
         name: 'manager_id',
-        message: `Please input Manager ID.`
+        message: `Please input Manager ID.`,
+        
       }
     ])
       .then(newEmployee => {

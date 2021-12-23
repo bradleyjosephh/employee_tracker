@@ -23,5 +23,5 @@ last_name VARCHAR(30) NOT NULL,
 roles_id INT NOT NULL,
 FOREIGN KEY (roles_id) REFERENCES roles(id),
 manager_id INT,
-FOREIGN KEY (manager_id) REFERENCES employee(id) 
+FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL
 );
