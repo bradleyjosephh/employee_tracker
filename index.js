@@ -8,7 +8,7 @@ function promptOptions() {
     inquirer.prompt([
         {
             type: "list",
-            choices: ["viewEmployee", "viewRole", "addEmployee", "addManager", "viewDepartment", "addDepartment", "addRole", "updateRole", "removeEmployee", "removeDepartment", "removeRole", "Exit App"],
+            choices: ["viewEmployee", "viewRole", "addEmployee", "addManager", "viewDepartment", "addDepartment", "addRole", "updateRole", "removeEmployee", "Exit App"],
             messages: "What would you like to do?",
             name: "name",
         }
@@ -37,12 +37,6 @@ function promptOptions() {
                 break;
             case "updateRole":
                 updateRole()
-                break;
-            case 'removeDepartment':
-                removeDepartment();
-                break;
-            case 'removeRole':
-                removeRole();
                 break;
             case 'removeEmployee':
                 removeEmployee();
