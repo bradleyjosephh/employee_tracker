@@ -140,15 +140,17 @@ function addDepartment() {
         message: 'What is the LAST name of the employee?'
       },
       {
-        type: 'input',
+        type: 'list',
         name: 'roles_id',
-        message: `What is the new employee's role ID?`
+        message: `What is the new employee's role ID?`,
+        choices: [1, 2, 3, 4]
       },
       {
-        type: 'number',
+        type: 'list',
         name: 'manager_id',
         message: `Please input Manager ID.`,
-        
+        choices: []
+
       }
     ])
       .then(newEmployee => {
