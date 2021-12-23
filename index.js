@@ -106,9 +106,11 @@ function addDepartment() {
         message: 'Please input name of new role.'
       },
       {
-        type: 'input',
+        type: "list",
         name: 'department_id',
-        message: 'What is the department ID?'
+        message: 'What is the department ID?',
+        choices: [1, 2, 3, 4]
+
       },
       {
         type: 'input',
