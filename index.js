@@ -8,7 +8,7 @@ function promptOptions() {
     inquirer.prompt([
         {
             type: "list",
-            choices: ["viewEmployee", "viewRole", "addEmployee", "viewDepartment", "addDepartment", "addRole", "updateRole", "removeEmployee", "removeDepartment", "removeRole", "Exit App"],
+            choices: ["viewEmployee", "viewRole", "addEmployee", "addManager", "viewDepartment", "addDepartment", "addRole", "updateRole", "removeEmployee", "removeDepartment", "removeRole", "Exit App"],
             messages: "What would you like to do?",
             name: "name",
         }
@@ -28,6 +28,9 @@ function promptOptions() {
                 break;
             case "addDepartment":
                 addDepartment()
+                break;
+            case "addManager":
+                addManager()
                 break;
             case "addRole":
                 addRole()
@@ -143,13 +146,14 @@ function addDepartment() {
         type: 'list',
         name: 'roles_id',
         message: `What is the new employee's role ID?`,
-        choices: [1, 2, 3, 4]
+        choices: [2, 3, 4]
       },
       {
         type: 'list',
         name: 'manager_id',
         message: `Please input Manager ID.`,
-        choices: []
+        choices: [2, 3, 4]
+
 
       }
     ])
@@ -162,6 +166,41 @@ function addDepartment() {
       })
   }
 
+  function addManager() {
+    inquirer.prompt([
+      {
+        type: 'input',
+        name: 'first_name',
+        message: 'What is the FIRST name of the manager?'
+      },
+      {
+        type: 'input',
+        name: 'last_name',
+        message: 'What is the LAST name of the manager?'
+      },
+      {
+        type: 'list',
+        name: 'roles_id',
+        message: `Manager of which department?`,
+        choices: [ 2, 3, 4]
+      },
+    //   {
+    //     type: 'list',
+    //     name: 'manager_id',
+    //     message: `Please input Manager ID.`,
+    //     choices: []
+
+
+    //   }
+    ])
+      .then(newEmployee => {
+        db.query('INSERT INTO employee SET ?', newEmployee, err => {
+          if (err) { console.log(err) }
+          console.log(`${newEmployee.first_name} ${newEmployee.last_name} is now added!`)
+          promptOptions()
+        })
+      })
+  }
 //   update functions
 
 function updateRole() {
