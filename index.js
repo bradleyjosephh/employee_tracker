@@ -1,13 +1,8 @@
 const inquirer = require('inquirer');
 require('console.table');
 const mysql = require('mysql2');
-const { allowedNodeEnvironmentFlags } = require('process');
-const db = mysql.createConnection({
-    host: "localhost",
-    user: 'root',
-    password: 'rootroot',
-    database: 'employeeTracker_db'
-});
+const db = mysql.createConnection('mysql://root:rootroot@localhost:3306/employeetracker_db')
+
 
 function promptOptions() {
     inquirer.prompt([
