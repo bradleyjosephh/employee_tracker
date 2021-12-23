@@ -226,7 +226,7 @@ function updateRole() {
           .then(updateEmployee => {
             db.query('UPDATE employee SET ? WHERE ?', [{ roles_id: updateEmployee.roles_id }, { id: updateEmployee.id }], () => {
               console.log('The employee role has been updated.')
-              start()
+              promptOptions()
             })
           })
       })
@@ -234,48 +234,7 @@ function updateRole() {
   }
 
 // remove function
-function removeDepartment() {
-    db.query('SELECT * FROM department', (err, department) => {
-      if (err) { console.log(err) }
-      console.table(department)
-      inquirer.prompt([
-        {
-          type: 'input',
-          name: 'name',
-          message: 'Enter NAME of department that is being removed.'
-        }
-      ])
-        .then(removeDept => {
-          db.query('DELETE FROM department WHERE ?', removeDept, err => {
-            if (err) { console.log(err) }
-            console.log(`Department has been removed!`)
-            promptOptions()
-          })
-        })
-    })
-  }
-  
-  function removeRole() {
-    db.query('SELECT * FROM roles', function (err, data) {
-      if (err) { console.log(err) }
-      console.table(data)
-      inquirer.prompt([
-        {
-          type: 'input',
-          name: 'id',
-          message: 'Please input Role ID of role that is being removed.'
-        }
-      ])
-        .then(removeRole => {
-          db.query('DELETE FROM roles WHERE ?', removeRole, err => {
-            if (err) { console.log(err) }
-            console.log(`Role has been removed!`)
-            promptOptions()
-          })
-        })
-    })
-  }
-  
+
   function removeEmployee() {
     db.query('SELECT * FROM employee', function (err, data) {
       if (err) { console.log(err) }
