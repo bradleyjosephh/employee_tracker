@@ -106,7 +106,7 @@ function addDepartment() {
         type: "list",
         name: 'department_id',
         message: 'What is the department ID?',
-        choices: [1, 2, 3, 4]
+        choices: [1, 2, 3, 4, 5, 6, 7, 8]
 
       },
       {
@@ -140,13 +140,13 @@ function addDepartment() {
         type: 'list',
         name: 'roles_id',
         message: `What is the new employee's role ID?`,
-        choices: [2, 3, 4]
+        choices: [1, 2, 3, 4]
       },
       {
         type: 'list',
         name: 'manager_id',
         message: `Please input Manager ID.`,
-        choices: [2, 3, 4]
+        choices: [1, 2, 3, 4]
 
 
       }
@@ -176,7 +176,7 @@ function addDepartment() {
         type: 'list',
         name: 'roles_id',
         message: `Manager of which department?`,
-        choices: [ 2, 3, 4]
+        choices: [1, 2, 3, 4, 5, 6, 7, 8]
       },
     //   {
     //     type: 'list',
