@@ -146,7 +146,7 @@ function addDepartment() {
         type: 'list',
         name: 'manager_id',
         message: `Please input Manager ID.`,
-        choices: [1, 2, 3, 4]
+        choices: [1, 2, 3, 4, 6, 7]
 
 
       }
