@@ -15,7 +15,7 @@ Video Link: https://youtu.be/XOD7TMFCGBU
   * [Email-Address](#email-address)
   
   ## Description
-  A note taking app using db.json to store notes created using express. This app is deployed through heroku.
+  This is an employee tracker which shows department, roles, and list of employees using inquirer backed back mysql database.
   --
   ## Installation
    git clone "https://github.com/employee_tracker"
