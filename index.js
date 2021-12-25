@@ -140,7 +140,7 @@ function addDepartment() {
         type: 'list',
         name: 'roles_id',
         message: `What is the new employee's role ID?`,
-        choices: [1, 2, 3, 4]
+        choices: [1, 2, 3, 4, 5]
       },
       {
         type: 'list',
